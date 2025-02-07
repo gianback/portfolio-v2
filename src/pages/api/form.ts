@@ -16,13 +16,8 @@ export const POST: APIRoute = async ({ request }) => {
 
   const url = `${URL_SPREADSHEET}?${params.toString()}`;
 
-  return new Response(
-    JSON.stringify({
-      url,
-    }),
-    {
-      status: 200,
-      statusText: "Internal Server Error",
-    }
-  );
+  return new Response(null, {
+    status: 200,
+    statusText: "Ok",
+  });
 };
