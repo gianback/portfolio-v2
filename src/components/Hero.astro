@@ -1,0 +1,50 @@
+---
+import Avatar from "@assets/avatar.png";
+import Github from "@components/Icons/github.astro";
+import Linkedin from "@components/Icons/linkedin.astro";
+import CV from "@assets/docs/CV_GIAN_FRANCO_PERALTA.pdf";
+import Button from "./button.astro";
+---
+
+<main class="py-24 h-screen flex items-center">
+  <div
+    class="container mx-auto text-center space-y-8 transition-opacity animate-fadein"
+  >
+    <picture class="block">
+      <img
+        src={Avatar.src}
+        alt="logo"
+        class="w-32 h-32 aspect-square mx-auto rounded-full"
+      />
+    </picture>
+    <h1 class="text-4xl text-white font-bold max-w-[20ch] mx-auto">
+      Si puedes imaginarlo, <span class="gradient-text"
+        >puedes programarlo.</span
+      >
+    </h1>
+    <p
+      class="text-lg text-[#C5C5C5] max-w-[65ch] mx-auto font-medium text-balance"
+    >
+      Soy <strong class="text-white">Gian Franco</strong>, desarrollador web con
+      más de dos años de experiencia en la creación de soluciones personalizadas
+      para una variedad de clientes.
+    </p>
+    <div class="text-white flex items-center justify-center gap-4">
+      <a
+        href="https://github.com/gianback"
+        target="_blank"
+        aria-label="Ir al github"
+      >
+        <Github />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/gianfrancoperalta/"
+        target="_blank"
+        aria-label="Ir al linkedin"
+      >
+        <Linkedin />
+      </a>
+      <Button download url={CV}> Descargar CV </Button>
+    </div>
+  </div>
+</main>

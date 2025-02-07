@@ -1,0 +1,40 @@
+---
+const logos = [
+  "html.svg",
+  "css.svg",
+  "javascript.svg",
+  "astro.svg",
+  "typescript.svg",
+  "tailwindcss.svg",
+  "nextjs.svg",
+  "svelte.svg",
+  "react.svg",
+  "strapi.svg",
+  "vuejs.svg",
+  "nodejs.svg",
+  "postgres.svg",
+  "prisma.svg",
+  "express.svg",
+];
+---
+
+<section class="h-screen flex items-center">
+  <div class="container mx-auto">
+    <h2 class="text-white text-center font-bold text-4xl">Tecnologías</h2>
+    <ul class="grid grid-cols-4 place-items-center gap-12 mt-20">
+      {
+        logos.map((logo) => (
+          <li>
+            <img
+              alt={`${logo.split(".svg")[0]}`}
+              src={`src/assets/tech-logos/${logo}`}
+              title={`${logo.split(".svg")[0]}`}
+              class="w-20 h-20 "
+              loading="lazy"
+            />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

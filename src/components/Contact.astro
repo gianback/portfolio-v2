@@ -1,0 +1,78 @@
+---
+import Button from "./button.astro";
+---
+
+<section>
+  <div class="container mx-auto px-8">
+    <h2 class="text-4xl text-white font-bold text-center mb-20">Contacto</h2>
+
+    <form id="form" class="mx-auto w-fit space-y-4">
+      <div class="w-full max-w-sm min-w-[550px] space-y-3">
+        <label for="full_name" class="text-base text-white font-medium">
+          Nombres y apellidos:
+        </label>
+        <input
+          id="full_name"
+          name="full_name"
+          required
+          class="w-full bg-transparent placeholder:text-slate-400 text-white text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+          type="text"
+        />
+      </div>
+      <div class="w-full max-w-sm min-w-[550px] space-y-3">
+        <label for="email" class="text-base text-white font-medium"
+          >Correo electrónico:</label
+        >
+        <input
+          id="email"
+          name="email"
+          required
+          class="w-full bg-transparent placeholder:text-slate-400 text-white text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+          type="email"
+        />
+      </div>
+      <div class="w-full max-w-sm min-w-[550px] space-y-3">
+        <label for="message" class="text-base text-white font-medium"
+          >Mensaje:</label
+        >
+        <textarea
+          name="message"
+          id="message"
+          required
+          class="w-full max-w-sm min-w-[550px] h-40 bg-transparent placeholder:text-slate-400 text-white text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+        ></textarea>
+      </div>
+      <div class="mx-auto flex justify-end">
+        <Button> Enviar </Button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script>
+  const $form = document.getElementById("form") as HTMLFormElement;
+
+  $form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const formData = new FormData($form);
+
+    const body = {
+      full_name: `${formData.get("full_name")}`,
+      email: `${formData.get("email")}`,
+      message: `${formData.get("message")}`,
+    };
+
+    const response = await fetch("/api/form", {
+      method: "POST",
+      body: JSON.stringify(body),
+    });
+
+    console.log(response);
+
+    if (response.ok) {
+      const data = await response.json();
+
+      window.location.href = data.url;
+    }
+  });
+</script>

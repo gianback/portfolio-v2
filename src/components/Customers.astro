@@ -1,0 +1,68 @@
+---
+import Valkyria from "@assets/customers/valkyria.webp";
+import Doorandoor from "@assets/customers/doorandoor.webp";
+
+import Button from "./button.astro";
+---
+
+<section>
+  <div class="container mx-auto px-8">
+    <h2 class="text-4xl text-white font-bold text-center mb-20">
+      Clientes satisfechos
+    </h2>
+    <div class="space-y-20">
+      <article class="grid grid-cols-2 items-center">
+        <div>
+          <h3 class="text-blue-500 text-3xl font-bold mb-4">Valkyria</h3>
+          <p
+            class="text-lg text-white font-medium mb-12 text-balance"
+            style="text-;"
+          >
+            Este proyecto fué migrado y optimizado con el objetivo de maximizar
+            su
+            <span class="gradient-text">posicionamiento SEO</span>, <span
+              class="gradient-text">mejorar su rendimiento</span
+            > y ofrecer una <span class="gradient-text"
+              >experiencia de usuario
+            </span>más fluida, rápida e intuitiva.
+          </p>
+          <Button url="https://valkyria.pe/" target="_blank"> Visitar </Button>
+        </div>
+        <picture class="shrink-0">
+          <img
+            src={Valkyria.src}
+            alt="Valkyria"
+            loading="lazy"
+            class="aspect-square mr-auto rounded-2xl"
+          />
+        </picture>
+      </article>
+      <article class="grid grid-cols-2 items-center">
+        <picture class="shrink-0">
+          <img
+            src={Doorandoor.src}
+            alt="Doorandoor"
+            loading="lazy"
+            class="aspect-square mr-auto rounded-2xl"
+          />
+        </picture>
+        <div>
+          <h3 class="text-blue-500 text-3xl font-bold mb-4">Doorandoor</h3>
+          <p
+            class="text-lg text-white font-medium mb-12 text-balance"
+            style="text-;"
+          >
+            El e-commerce de Doorandoor se encuentra actualmente en desarrollo,
+            sin embargo, se ha implementado un formulario de contacto que <span
+              class="gradient-text"
+              >envía por correo
+            </span> un cupón de descuento para la primera compra.
+          </p>
+          <Button url="https://form.doorandoor.com/" target="_blank">
+            Visitar
+          </Button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
