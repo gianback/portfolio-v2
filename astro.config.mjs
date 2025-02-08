@@ -6,7 +6,17 @@ export default defineConfig({
   output: "server",
   env: {
     schema: {
-      URL_SPREADSHEET: envField.string({
+      GOOGLE_PRIVATE_KEY: envField.string({
+        access: "public",
+        context: "server",
+        optional: true,
+      }),
+      GOOGLE_CLIENT_EMAIL: envField.string({
+        access: "public",
+        context: "server",
+        optional: true,
+      }),
+      SPREADSHEET_ID: envField.string({
         access: "public",
         context: "server",
         optional: true,
