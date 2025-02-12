@@ -11,6 +11,18 @@
 body {
   font-family: var(--font-poppins);
 }
+body::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+body::-webkit-scrollbar-track {
+  background: #161513;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 20px;
+}
 
 .gradient-text {
   background: -webkit-linear-gradient(0deg, #ff8660, #9a33ff);

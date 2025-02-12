@@ -1,11 +1,25 @@
-<header>
-  <div class="container">
-    <nav>
-      <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#proyectos">Proyectos</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+---
+import MenuIcon from "./Icons/menu-icon.astro";
+---
+
+<header
+  class="bg-primary/20 h-full lg:h-[96px] flex items-center sticky top-0 left-0 right-0 backdrop-blur-lg"
+>
+  <div class="container flex justify-end py-4 h-full mx-auto px-8">
+    <nav
+      id="Navbar"
+      class="lg:h-full !bg-red-500 transition-transform duration-300 ease-in-out fixed h-full w-full block lg:static top-0 bottom-0 left-0 right-0 px-8 py-20 lg:bg-transparent backdrop-blur-lg lg:backdrop-blur-none"
+    >
+      <!-- bg-primary/25 -->
+      <ul
+        class="[&>li>a]:text-white [&>li>a]:text-xl [&>li>a]:font-semibold flex lg:items-center flex-col lg:flex-row gap-12 h-full"
+      >
+        <li><a href="#hero">Sobre mi</a></li>
+        <li><a href="#customers">Clientes satisfechos</a></li>
+        <li><a href="#projects">Proyectos personales</a></li>
+        <li><a href="#contact">Contacto</a></li>
       </ul>
     </nav>
+    <MenuIcon />
   </div>
 </header>

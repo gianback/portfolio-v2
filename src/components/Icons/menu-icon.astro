@@ -1,0 +1,74 @@
+<div
+  class={`Icon-Menu flex w-16 h-16 justify-center lg:hidden items-center relative cursor-pointer bg-transparent [&>span]:bg-primary`}
+>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<style>
+  .Icon-Menu {
+    position: relative;
+    isolation: isolate;
+    transition-property: background-color, height, width;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
+    /* border-radius: 25px 0 0 25px; */
+    z-index: 6;
+
+    /* Animacion cuando "isActive" es true */
+  }
+  span {
+    height: 0.3rem;
+    width: 2rem;
+    transition:
+      transform 0.5s ease,
+      background-color 0.5s ease;
+    width: 2.75rem;
+    height: 4px;
+    display: inline-block;
+    position: absolute;
+    margin: 0 auto;
+    border-radius: 1rem;
+    background-color: white;
+    backdrop-filter: blur(10px);
+  }
+  .Icon-Menu span:nth-child(1) {
+    transform: translateY(-0.8rem);
+  }
+  .Icon-Menu span:nth-child(3) {
+    transform: translateY(0.8rem);
+  }
+  .Icon-Menu.change {
+    border: 2px solid;
+    border-color: transparent;
+    border-radius: 9999px;
+  }
+
+  .Icon-Menu.change span:nth-child(1) {
+    width: 5rem; /* w-20 (20 * 0.25rem) */
+    transform: rotateZ(42.19deg) scale(0.45);
+  }
+
+  .Icon-Menu.change span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .Icon-Menu.change span:nth-child(3) {
+    width: 5rem; /* w-20 */
+    transform: rotateZ(-42.19deg) scale(0.45);
+  }
+</style>
+
+<script>
+  const d = document;
+  const $MenuIcon = d.querySelector(".Icon-Menu");
+  const $Navbar = d.querySelector("#Navbar");
+  const $Body = d.querySelector("body");
+
+  $MenuIcon?.addEventListener("click", () => {
+    $MenuIcon.classList.toggle("change");
+    // $Body?.classList.toggle("overflow-hidden");
+    $Navbar?.classList.toggle("-translate-y-full");
+  });
+</script>
