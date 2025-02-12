@@ -8,6 +8,10 @@
   --animate-fadein: fadein 0.5s ease-in-out;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-poppins);
 }

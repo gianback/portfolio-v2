@@ -1,16 +1,54 @@
 ---
 import Header from "@components/Header.astro";
+import Avatar from "@assets/avatar.png";
+
+const { origin } = Astro.url;
+console.log(origin);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Gian Franco Peralta Bravo</title>
+    <meta
+      property="og:title"
+      content="Gian Franco Peralta Bravo - Desarrollador Frontend"
+    />
+    <meta property="og:type" content="profile" />
+    <meta
+      property="og:url"
+      content="https://www.linkedin.com/in/gianfrancoperalta/"
+    />
+    <meta property="og:image" content={Avatar.src} />
+    <meta
+      property="og:description"
+      content="Desarrollador web con
+      más de dos años de experiencia en la creación de soluciones personalizadas
+      para una variedad de clientes."
+    />
+    <meta property="og:locale" content="es_PE" />
+    <meta
+      property="og:site_name"
+      content="Portafolio de Gian Franco Peralta Bravo"
+    />
+
+    <!-- Etiquetas adicionales para Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Gian Franco Peralta Bravo - Desarrollador Frontend"
+    />
+    <meta
+      name="twitter:description"
+      content="Desarrollador web con
+      más de dos años de experiencia en la creación de soluciones personalizadas
+      para una variedad de clientes."
+    />
   </head>
-  <body class="">
+  <body>
     <Header />
     <slot />
   </body>

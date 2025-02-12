@@ -3,16 +3,15 @@ import MenuIcon from "./Icons/menu-icon.astro";
 ---
 
 <header
-  class="bg-primary/20 h-full lg:h-[96px] flex items-center sticky top-0 left-0 right-0 backdrop-blur-lg"
+  class="bg-primary/20 h-full flex items-center sticky top-0 left-0 right-0 backdrop-blur-lg"
 >
   <div class="container flex justify-end py-4 h-full mx-auto px-8">
     <nav
       id="Navbar"
-      class="lg:h-full !bg-red-500 transition-transform duration-300 ease-in-out fixed h-full w-full block lg:static top-0 bottom-0 left-0 right-0 px-8 py-20 lg:bg-transparent backdrop-blur-lg lg:backdrop-blur-none"
+      class="h-screen lg:h-full -translate-y-full lg:translate-y-0 bg-primary/90 transition-transform duration-300 ease-in-out fixed w-full block lg:static top-0 bottom-0 left-0 right-0 px-8 py-20 lg:py-4 lg:bg-transparent backdrop-blur-lg lg:backdrop-blur-none"
     >
-      <!-- bg-primary/25 -->
       <ul
-        class="[&>li>a]:text-white [&>li>a]:text-xl [&>li>a]:font-semibold flex lg:items-center flex-col lg:flex-row gap-12 h-full"
+        class="[&>li>a]:text-white [&>li>a]:text-xl [&>li>a]:font-semibold flex lg:items-center lg:justify-center flex-col lg:flex-row gap-12 h-full"
       >
         <li><a href="#hero">Sobre mi</a></li>
         <li><a href="#customers">Clientes satisfechos</a></li>
@@ -23,3 +22,38 @@ import MenuIcon from "./Icons/menu-icon.astro";
     <MenuIcon />
   </div>
 </header>
+
+<script>
+  const links = document.querySelectorAll("#Navbar ul li a");
+
+  const executeTogglesMenu = () => {
+    const $MenuIcon = document.querySelector(".Icon-Menu") as HTMLElement;
+    const $Navbar = document.querySelector("#Navbar") as HTMLElement;
+    $Navbar.classList.toggle("-translate-y-full");
+    $MenuIcon.classList.toggle("change");
+  };
+
+  const addListenersLinks = () => {
+    links.forEach((link) => {
+      link.addEventListener("click", executeTogglesMenu);
+    });
+  };
+
+  const removeListenerLinks = () => {
+    links.forEach((link) => {
+      link.removeEventListener("click", executeTogglesMenu);
+    });
+  };
+
+  let isMobile = window.innerWidth < 1024;
+
+  if (isMobile) {
+    addListenersLinks();
+  }
+
+  const matchMediaMobile = window.matchMedia("(max-width: 1023px)");
+
+  matchMediaMobile.addEventListener("change", (e) => {
+    e.matches ? addListenersLinks() : removeListenerLinks();
+  });
+</script>

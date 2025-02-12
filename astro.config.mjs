@@ -2,12 +2,15 @@
 import { defineConfig, envField } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
+import vercel from "@astrojs/vercel";
 // https://astro.build/config
 export default defineConfig({
   output: "server",
+
   devToolbar: {
     enabled: false,
   },
+
   env: {
     schema: {
       GOOGLE_PRIVATE_KEY: envField.string({
@@ -27,8 +30,11 @@ export default defineConfig({
       }),
     },
   },
+
   vite: {
     plugins: [tailwindcss()],
   },
+
   integrations: [react()],
+  adapter: vercel(),
 });
