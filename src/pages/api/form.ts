@@ -31,6 +31,7 @@ export const POST: APIRoute = async ({ request }) => {
     });
 
     if (response.status >= 500) {
+      console.error("Error al escribir en Sheets:", response);
       return new Response(null, {
         status: 500,
         statusText: "Internal Server Error",
@@ -42,6 +43,7 @@ export const POST: APIRoute = async ({ request }) => {
       statusText: "OK",
     });
   } catch (error) {
+    console.error("Error al escribir en Sheets:", error);
     return new Response(null, {
       status: 500,
       statusText: "Internal Server Error",
