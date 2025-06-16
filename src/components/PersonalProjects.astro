@@ -1,5 +1,6 @@
 ---
 import ClonChatgpt from "@assets/projects/clon-chatgpt.webp";
+import BarberShop from "@assets/projects/barber-shop.webp";
 import Button from "./button.astro";
 ---
 
@@ -8,37 +9,97 @@ import Button from "./button.astro";
     <h2 class="text-white text-center font-bold text-4xl mb-20">
       Proyectos personales
     </h2>
-    <article class="grid gap-12 md:gap-0 md:grid-cols-2 items-center">
-      <div class="text-center md:text-left">
-        <h3
-          class="text-blue-500 text-center md:text-left text-3xl font-bold mb-4"
-        >
-          ChatJPG
-        </h3>
-        <p class="text-lg text-white font-medium mb-12 text-balance">
-          Explora el futuro de las experiencias conversacionales impulsadas por
-          IA con nuestro ChatJPG. Este proyecto fue creado con <span
-            class="gradient-text">Nextjs</span
-          >, <span class="gradient-text">Typescript</span>, <span
-            class="gradient-text">Tailwindcss</span
-          >, <span class="gradient-text">Postgres</span>, <span
-            class="gradient-text">Prisma</span
-          > y <span class="gradient-text">Cohere.</span>
-        </p>
-        <Button url="https://clon-chatgpt.vercel.app/home" target="_blank">
-          Visitar
-        </Button>
-      </div>
-      <picture class="shrink-0">
-        <img
-          src={ClonChatgpt.src}
-          alt="Doorandoor"
-          loading="lazy"
-          width="600"
-          height="450"
-          class="aspect-[4/3] mr-auto rounded-2xl"
-        />
-      </picture>
-    </article>
+    <div class="space-y-20">
+      <article class="grid gap-12 md:gap-4 md:grid-cols-2 items-center">
+        <div class="text-center md:text-left">
+          <h3
+            class="text-blue-500 text-center md:text-left text-3xl font-bold mb-4"
+          >
+            ChatJPG
+          </h3>
+          <p class="text-lg text-white font-medium mb-12 text-balance">
+            Explora el futuro de las experiencias conversacionales impulsadas
+            por IA con nuestro ChatJPG. Este proyecto fue creado con <span
+              class="gradient-text">Nextjs</span
+            >, <span class="gradient-text"> Typescript</span>, <span
+              class="gradient-text"
+            >
+              Tailwindcss</span
+            >, <span class="gradient-text"> Postgres</span>, <span
+              class="gradient-text"
+            >
+              Prisma</span
+            > y <span class="gradient-text">Cohere.</span>
+          </p>
+          <div class="flex items-center gap-4">
+            <Button url="https://clon-chatgpt.vercel.app/home" target="_blank">
+              Visitar
+            </Button>
+            <Button
+              url="https://github.com/gianback/clon-chatgpt"
+              target="_blank"
+            >
+              Código
+            </Button>
+          </div>
+        </div>
+
+        <picture class="shrink-0">
+          <img
+            src={ClonChatgpt.src}
+            alt="Doorandoor"
+            loading="lazy"
+            width="600"
+            height="450"
+            class="aspect-[4/3] mr-auto rounded-2xl"
+          />
+        </picture>
+      </article>
+      <article class="grid gap-12 md:gap-4 md:grid-cols-2 items-center">
+        <picture class="shrink-0">
+          <img
+            src={BarberShop.src}
+            alt="Barber Shop"
+            loading="lazy"
+            width="600"
+            height="450"
+            class="aspect-[4/3] mr-auto rounded-2xl"
+          />
+        </picture>
+        <div class="text-center md:text-left">
+          <h3
+            class="text-blue-500 text-center md:text-left text-3xl font-bold mb-4"
+          >
+            Barber Shop "El Imperio"
+          </h3>
+          <p class="text-lg text-white font-medium mb-12 text-balance">
+            Barber Shop "El Imperio" es un proyecto personal que se ha
+            desarrollado en el marco de la plataforma de comercio electrónico
+            "El Imperio". Este proyecto fue creado con
+            <span class="gradient-text"> Svelte</span>,
+            <span class="gradient-text"> Nestjs</span>,
+            <span class="gradient-text"> Typescript</span>, <span
+              class="gradient-text"
+            >
+              Tailwindcss</span
+            >, <span class="gradient-text"> Postgres</span>, <span
+              class="gradient-text"
+            >
+              TypeORM</span
+            >,<span class="gradient-text"> Cloudflare R2</span> y <span
+              class="gradient-text"
+            >
+              Stripe.</span
+            >
+          </p>
+          <Button
+            url="https://github.com/gianback/barber-shop-ne"
+            target="_blank"
+          >
+            Código
+          </Button>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
