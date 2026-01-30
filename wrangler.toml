@@ -2,5 +2,5 @@ name = "portfolio-v2"
 compatibility_flags = ["nodejs_compat"]
 compatibility_date = "2024-09-23"
 kv_namespaces = [
-  { binding = "SESSION", id = "dd0fecdd85ca49ada1b09ee9eea77cc5" }
+  { binding = "SESSION", id = "e6786ed1caf746a6bcf6372326b952dd" }
 ]
