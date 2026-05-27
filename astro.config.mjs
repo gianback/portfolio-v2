@@ -2,43 +2,35 @@
 import { defineConfig, envField } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
-import cloudflare from "@astrojs/cloudflare";
 // https://astro.build/config
 export default defineConfig({
-  output: "server",
+  output: "static",
   devToolbar: {
     enabled: false,
   },
 
-  env: {
-    schema: {
-      GOOGLE_PRIVATE_KEY: envField.string({
-        access: "public",
-        context: "server",
-        optional: true,
-      }),
-      GOOGLE_CLIENT_EMAIL: envField.string({
-        access: "public",
-        context: "server",
-        optional: true,
-      }),
-      SPREADSHEET_ID: envField.string({
-        access: "public",
-        context: "server",
-        optional: true,
-      }),
-    },
-  },
+  // env: {
+  //   schema: {
+  //     GOOGLE_PRIVATE_KEY: envField.string({
+  //       access: "public",
+  //       context: "server",
+  //       optional: true,
+  //     }),
+  //     GOOGLE_CLIENT_EMAIL: envField.string({
+  //       access: "public",
+  //       context: "server",
+  //       optional: true,
+  //     }),
+  //     SPREADSHEET_ID: envField.string({
+  //       access: "public",
+  //       context: "server",
+  //       optional: true,
+  //     }),
+  //   },
+  // },
 
   vite: {
-    plugins: [tailwindcss()],
-    resolve: {
-      alias: import.meta.env.PROD && {
-        "react-dom/server": "react-dom/server.edge",
-      },
-    },
+    plugins: [tailwindcss()]  
   },
-
   integrations: [react()],
-  adapter: cloudflare(),
 });
